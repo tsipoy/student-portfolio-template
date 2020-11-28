@@ -29808,7 +29808,77 @@ function Header() {
     className: "personalDetail"
   }, "Self-motivated developer, who is willing to learn and create outstanding UI applications.")));
 }
-},{"react":"node_modules/react/index.js","./assets/myPhoto.jpg":"assets/myPhoto.jpg"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./assets/myPhoto.jpg":"assets/myPhoto.jpg"}],"assets/interior-desktop.png":[function(require,module,exports) {
+module.exports = "/interior-desktop.fe93026b.png";
+},{}],"Responsive.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Responsive;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _interiorDesktop = _interopRequireDefault(require("./assets/interior-desktop.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Responsive() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "responsive"
+  }, /*#__PURE__*/_react.default.createElement("figure", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _interiorDesktop.default,
+    alt: "responsive"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "aboutInterior"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "#html #css #sass #responsive"), /*#__PURE__*/_react.default.createElement("h2", null, "Interior Consultant"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "aboutSites"
+  }, "In this project, I work with HTML and CSS to create a responsive page and I add SASS for the fonts to work. The design is from devchallenge.io.")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, "Demo"), /*#__PURE__*/_react.default.createElement("button", null, "Code"))));
+}
+},{"react":"node_modules/react/index.js","./assets/interior-desktop.png":"assets/interior-desktop.png"}],"Progress.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Progress;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Progress() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "progress"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "FRONT END"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "progressWrapper"
+  }, /*#__PURE__*/_react.default.createElement("label", null, "React"), /*#__PURE__*/_react.default.createElement("progress", {
+    max: "100",
+    value: "30"
+  }, "30%")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "progressWrapper"
+  }, /*#__PURE__*/_react.default.createElement("label", null, "Javascript"), /*#__PURE__*/_react.default.createElement("progress", {
+    max: "100",
+    value: "50"
+  }, "50%")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "progressWrapper"
+  }, /*#__PURE__*/_react.default.createElement("label", null, "Html"), /*#__PURE__*/_react.default.createElement("progress", {
+    max: "100",
+    value: "90"
+  }, "90%")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "progressWrapper"
+  }, /*#__PURE__*/_react.default.createElement("label", null, "css"), /*#__PURE__*/_react.default.createElement("progress", {
+    max: "100",
+    value: "90"
+  }, "90%")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "progressWrapper"
+  }, /*#__PURE__*/_react.default.createElement("label", null, "sass"), /*#__PURE__*/_react.default.createElement("progress", {
+    max: "100",
+    value: "40"
+  }, "40%"))));
+}
+},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29816,22 +29886,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = App;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _Header = _interopRequireDefault(require("./Header"));
 
+var _Responsive = _interopRequireDefault(require("./Responsive"));
+
+var _Progress = _interopRequireDefault(require("./Progress"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function App() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "wrapper"
-  }, /*#__PURE__*/_react.default.createElement(_Header.default, null));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_Responsive.default, null), /*#__PURE__*/_react.default.createElement(_Progress.default, null));
 }
-},{"react":"node_modules/react/index.js","./Header":"Header.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Header":"Header.js","./Responsive":"Responsive.js","./Progress":"Progress.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

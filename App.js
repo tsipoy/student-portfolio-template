@@ -1,10 +1,14 @@
-import React, { Fragment } from 'react'
-import Header from './Header'
+import React from 'react'
+import Header from './Header';
+import Responsive from "./Responsive";
+import Progress from "./Progress"
 
 export default function App() {
     return (
-        <div className="wrapper">
+        <div>
             <Header />
+            <Responsive />
+            <Progress />
         </div>
     )
 }

@@ -8,13 +8,15 @@ html {
     color: #4F4F4F;
 }
 
+/* Header */
+
 img {
     width: 100%;
     height: auto;
     border-radius: 12px;
 }
 
-.wrapper {
+header, .responsive, .progress {
     background-color: white;
     padding-block-start: 16px;
     padding-block-end: 32px;
@@ -48,6 +50,47 @@ a {
     color: #828282;
 }
 
+
+/* Responsive */
+
+.aboutSites {
+    color: #828282;
+    padding-block-end: 32px;
+    padding-block-start: 22px;
+}
+
+.responsive button {
+    border: 1px solid #5C94E1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    color: #5C94E1;
+    padding-block-end: 10px;
+    padding-block-start: 10px;
+    padding-inline-start: 17px;
+    padding-inline-end: 17px;
+    margin-inline-end: 16px;
+}
+
+.responsive button:hover {
+    background-color: #5C94E1;
+    color: #ffff;
+}
+
+.responsive img {
+    max-width: 100%;
+}
+
+.progressWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+progress {
+    width: 100%;
+}
+
+
 @media(min-width: 900px) {
     .wrapper {
         margin: auto;
@@ -68,5 +111,15 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .responsive {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .aboutInterior {
+        padding-inline-start: 50px;
     }
 }
