@@ -29792,13 +29792,21 @@ function Header() {
   return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("figure", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _myPhoto.default,
     alt: "natacha"
-  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Natacha"), /*#__PURE__*/_react.default.createElement("p", null, "Front-end developer")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("a", {
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "contactWrapper"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Natacha"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "career"
+  }, "Front-end developer")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "contact"
+  }, /*#__PURE__*/_react.default.createElement("a", {
     href: "mailto:volanana5@gmail.com"
   }, /*#__PURE__*/_react.default.createElement("i", {
     className: "ri-mail-fill"
-  }), " volanana5@gmail.com"), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("i", {
+  }), " Email me"), /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("i", {
     className: "ri-phone-fill"
-  }), " (+261) 34 46 658 14")), /*#__PURE__*/_react.default.createElement("p", null));
+  }), " (+261) 34 46 658 14"))), /*#__PURE__*/_react.default.createElement("p", {
+    className: "personalDetail"
+  }, "Self-motivated developer, who is willing to learn and create outstanding UI applications.")));
 }
 },{"react":"node_modules/react/index.js","./assets/myPhoto.jpg":"assets/myPhoto.jpg"}],"App.js":[function(require,module,exports) {
 "use strict";

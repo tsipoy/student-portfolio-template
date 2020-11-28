@@ -3,6 +3,11 @@ body {
     background-color: #F2F2F2;
 }
 
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: #4F4F4F;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -17,7 +22,6 @@ img {
     padding-inline-start: 32px;
     margin: 32px;
     border-radius: 12px;
-    align-items: baseline;
 }
 
 figure {
@@ -25,7 +29,44 @@ figure {
     margin-inline-start: 0;
 }
 
+.career {
+    margin-block-start: -10px;
+    color: #828282;
+}
+
 a {
     text-decoration: none;
     word-break: break-word;
+}
+
+.contact {
+    padding-block-end: 10px;
+    padding-block-start: 25px;
+}
+
+.personalDetail {
+    color: #828282;
+}
+
+@media(min-width: 900px) {
+    .wrapper {
+        margin: auto;
+        max-width: 900px;
+        margin-block-start: 70px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img {
+        max-width: 50%;
+    }
+
+    .contactWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
