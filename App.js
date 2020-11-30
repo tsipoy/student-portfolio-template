@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header';
 import Responsive from "./Responsive";
 import Progress from "./Progress"
+import OrganiseCss from './OrganiseCss';
 
 export default function App() {
     return (
@@ -9,6 +10,7 @@ export default function App() {
             <Header />
             <Responsive />
             <Progress />
+            <OrganiseCss />
         </div>
     )
 }
