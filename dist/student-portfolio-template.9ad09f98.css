@@ -8,6 +8,13 @@ html {
     color: #4F4F4F;
 }
 
+ul {
+    padding-inline-start: 0;
+    list-style: none;
+}
+li, p {
+    line-height: 24px;
+}
 /* Header */
 
 img {
@@ -16,7 +23,7 @@ img {
     border-radius: 12px;
 }
 
-header, .responsive, .progress, .organiseCss {
+header, .responsive, .progress, .organiseCss, .hobbies {
     background-color: white;
     padding-block-start: 16px;
     padding-block-end: 32px;
@@ -24,6 +31,16 @@ header, .responsive, .progress, .organiseCss {
     padding-inline-start: 32px;
     margin: 32px;
     border-radius: 12px;
+}
+
+.hobbies li {
+    padding-block-end: 16px;
+}
+
+.hobbies-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 figure {
@@ -73,6 +90,9 @@ a {
 
 .responsive button:hover {
     background-color: #5C94E1;
+}
+
+.responsive button:hover a {
     color: #ffff;
 }
 
@@ -94,8 +114,24 @@ progress {
     width: 100%;
 }
 
+.devButton {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    background-color: transparent;
+    color: #5C94E1;
+}
+
 
 @media(min-width: 900px) {
+    
+    .desktopLayout {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
     .wrapper {
         margin: auto;
         max-width: 900px;
@@ -127,7 +163,7 @@ progress {
         padding-inline-start: 50px;
     }
 
-    .organiseCss {
+    /* .organiseCss {
         position: relative;
     }
 
@@ -135,12 +171,16 @@ progress {
         position: absolute;
         right: 0;
         max-width: 30%;
-    }
+    } */
 
-    .organiseInner {
+    /* .headerWrapper {
         display: flex;
         flex-direction: row;
     }
+    .organiseInner {
+        display: flex;
+        flex-direction: column;
+    } */
 }
 
 /*# sourceMappingURL=/student-portfolio-template.9ad09f98.css.map */

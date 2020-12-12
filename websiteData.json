@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1607691591528,
+        "title": "Photography",
+        "type": "#HTML, #css, #responsive ",
+        "demoUrl": "https://photography-page-natacha.netlify.app/",
+        "codeUrl": "https://github.com/tsipoy/front-end-finals/tree/sliders/scss",
+        "description": "Here is my photography page which built with css, sass, a bit of javascript code",
+        "screenshot": "https://iili.io/KIqFne.png"
+    },
+    {
+        "id": 1607754679132,
+        "title": "Birthday App",
+        "type": "#React",
+        "demoUrl": "https://birthday-app-natacha.netlify.app/",
+        "codeUrl": "https://github.com/tsipoy/birthday-app",
+        "description": "This is my birthday app",
+        "screenshot": "https://iili.io/KI5UzJ.png"
+    }
+]

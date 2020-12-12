@@ -1,23 +1,38 @@
-import React from 'react';
-import responsive from "./assets/interior-desktop.png";
+import React, { useContext } from "react";
+
+import { Context } from "./Context";
 
 export default function Responsive() {
-    return (
-        <div className="responsive">
-            <figure>
-                <img src={responsive} alt="responsive" />
-            </figure>
-            <div className="aboutInterior">
-                <div>
-                    <p>#html #css #sass #responsive</p>
-                    <h2>Interior Consultant</h2>
-                    <p className="aboutSites">In this project, I work with HTML and CSS to create a responsive page and I add SASS for the fonts to work. The design is from devchallenge.io.</p>
-                </div>
-                <div>
-                    <button>Demo</button>
-                    <button>Code</button>
-                </div>
-            </div>
+  const { data } = useContext(Context);
+
+  const getData = data.map((website) => (
+      <div key={website.id} className="responsive">
+        <figure>
+          <img src={website.screenshot} alt="responsive" />
+        </figure>
+        <div className="aboutInterior">
+          <div>
+            <p>{website.type}</p>
+            <h2>{website.title}</h2>
+            <p className="aboutSites">
+              {website.description}
+            </p>
+          </div>
+          <div>
+            <button>
+              <a href={website.demoUrl}>Demo</a>
+            </button>
+            <button>
+              <a href={website.codeUrl}>Code</a>
+            </button>
+          </div>
         </div>
-    )
+      </div>
+    
+  ));
+  return (
+    <div>
+      {getData}
+    </div>
+  );
 }

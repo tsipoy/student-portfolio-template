@@ -29808,9 +29808,61 @@ function Header() {
     className: "personalDetail"
   }, "Self-motivated developer, who is willing to learn and create outstanding UI applications.")));
 }
-},{"react":"node_modules/react/index.js","./assets/myPhoto.jpg":"assets/myPhoto.jpg"}],"assets/interior-desktop.png":[function(require,module,exports) {
-module.exports = "/interior-desktop.fe93026b.png";
-},{}],"Responsive.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./assets/myPhoto.jpg":"assets/myPhoto.jpg"}],"websiteData.json":[function(require,module,exports) {
+module.exports = [{
+  "id": 1607691591528,
+  "title": "Photography",
+  "type": "#HTML, #css, #responsive ",
+  "demoUrl": "https://photography-page-natacha.netlify.app/",
+  "codeUrl": "https://github.com/tsipoy/front-end-finals/tree/sliders/scss",
+  "description": "Here is my photography page which built with css, sass, a bit of javascript code",
+  "screenshot": "https://iili.io/KIqFne.png"
+}, {
+  "id": 1607754679132,
+  "title": "Birthday App",
+  "type": "#React",
+  "demoUrl": "https://birthday-app-natacha.netlify.app/",
+  "codeUrl": "https://github.com/tsipoy/birthday-app",
+  "description": "This is my birthday app",
+  "screenshot": "https://iili.io/KI5UzJ.png"
+}];
+},{}],"Context.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ContextProvider = ContextProvider;
+exports.Context = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _websiteData = _interopRequireDefault(require("./websiteData.json"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const Context = _react.default.createContext();
+
+exports.Context = Context;
+
+function ContextProvider({
+  children
+}) {
+  const [data, setData] = (0, _react.useState)([]);
+  (0, _react.useEffect)(() => {
+    setData(_websiteData.default);
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(Context.Provider, {
+    value: {
+      data
+    }
+  }, children);
+}
+},{"react":"node_modules/react/index.js","./websiteData.json":"websiteData.json"}],"Responsive.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29818,25 +29870,36 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Responsive;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-var _interiorDesktop = _interopRequireDefault(require("./assets/interior-desktop.png"));
+var _Context = require("./Context");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Responsive() {
-  return /*#__PURE__*/_react.default.createElement("div", {
+  const {
+    data
+  } = (0, _react.useContext)(_Context.Context);
+  const getData = data.map(website => /*#__PURE__*/_react.default.createElement("div", {
+    key: website.id,
     className: "responsive"
   }, /*#__PURE__*/_react.default.createElement("figure", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _interiorDesktop.default,
+    src: website.screenshot,
     alt: "responsive"
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "aboutInterior"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "#html #css #sass #responsive"), /*#__PURE__*/_react.default.createElement("h2", null, "Interior Consultant"), /*#__PURE__*/_react.default.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, website.type), /*#__PURE__*/_react.default.createElement("h2", null, website.title), /*#__PURE__*/_react.default.createElement("p", {
     className: "aboutSites"
-  }, "In this project, I work with HTML and CSS to create a responsive page and I add SASS for the fonts to work. The design is from devchallenge.io.")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, "Demo"), /*#__PURE__*/_react.default.createElement("button", null, "Code"))));
+  }, website.description)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: website.demoUrl
+  }, "Demo")), /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement("a", {
+    href: website.codeUrl
+  }, "Code"))))));
+  return /*#__PURE__*/_react.default.createElement("div", null, getData);
 }
-},{"react":"node_modules/react/index.js","./assets/interior-desktop.png":"assets/interior-desktop.png"}],"Progress.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Context":"Context.js"}],"Progress.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29878,8 +29941,8 @@ function Progress() {
     value: "40"
   }, "40%"))));
 }
-},{"react":"node_modules/react/index.js"}],"assets/css.png":[function(require,module,exports) {
-module.exports = "/css.68c5f1b9.png";
+},{"react":"node_modules/react/index.js"}],"assets/game-landing.png":[function(require,module,exports) {
+module.exports = "/game-landing.7705b3ef.png";
 },{}],"OrganiseCss.js":[function(require,module,exports) {
 "use strict";
 
@@ -29890,21 +29953,69 @@ exports.default = OrganiseCss;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _css = _interopRequireDefault(require("./assets/css.png"));
+var _gameLanding = _interopRequireDefault(require("./assets/game-landing.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function OrganiseCss() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "organiseCss"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "headerWrapper"
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "organiseInner"
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Blog"), /*#__PURE__*/_react.default.createElement("h3", null, "How to organise your css")), /*#__PURE__*/_react.default.createElement("figure", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _css.default,
+    src: _gameLanding.default,
     alt: "css file"
-  })))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "In this article I tell you the story about organising my css"), /*#__PURE__*/_react.default.createElement("button", null, "dev.to")));
+  })))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "In this article I tell you the story about organising my css."), /*#__PURE__*/_react.default.createElement("button", {
+    className: "devButton"
+  }, "dev.to")));
 }
-},{"react":"node_modules/react/index.js","./assets/css.png":"assets/css.png"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./assets/game-landing.png":"assets/game-landing.png"}],"assets/basketball.jpg":[function(require,module,exports) {
+module.exports = "/basketball.3dbebebf.jpg";
+},{}],"assets/singing.jpg":[function(require,module,exports) {
+module.exports = "/singing.b1ae432f.jpg";
+},{}],"assets/walking.jpg":[function(require,module,exports) {
+module.exports = "/walking.8c5fa71f.jpg";
+},{}],"Hobbies.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Hobbies;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _basketball = _interopRequireDefault(require("./assets/basketball.jpg"));
+
+var _singing = _interopRequireDefault(require("./assets/singing.jpg"));
+
+var _walking = _interopRequireDefault(require("./assets/walking.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Hobbies() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "hobbies"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Hobbies"), /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _basketball.default,
+    alt: "Playing basketball"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "hobbies-title"
+  }, "Playing Basketball"), /*#__PURE__*/_react.default.createElement("li", null, "I like moving my hand with running a bit when I am playing basketball.")), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _singing.default,
+    alt: "Singing"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "hobbies-title"
+  }, "Singing"), /*#__PURE__*/_react.default.createElement("li", null, "I miss my family when I am singing. We are often singing load together.")), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _walking.default,
+    alt: "Walking"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "hobbies-title"
+  }, "Walking"), /*#__PURE__*/_react.default.createElement("li", null, "Walking with friends is on of my favourite hobbies."))));
+}
+},{"react":"node_modules/react/index.js","./assets/basketball.jpg":"assets/basketball.jpg","./assets/singing.jpg":"assets/singing.jpg","./assets/walking.jpg":"assets/walking.jpg"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29922,12 +30033,16 @@ var _Progress = _interopRequireDefault(require("./Progress"));
 
 var _OrganiseCss = _interopRequireDefault(require("./OrganiseCss"));
 
+var _Hobbies = _interopRequireDefault(require("./Hobbies"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_Responsive.default, null), /*#__PURE__*/_react.default.createElement(_Progress.default, null), /*#__PURE__*/_react.default.createElement(_OrganiseCss.default, null));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "desktopLayout"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Progress.default, null), /*#__PURE__*/_react.default.createElement(_Hobbies.default, null)), /*#__PURE__*/_react.default.createElement(_OrganiseCss.default, null)), /*#__PURE__*/_react.default.createElement(_Responsive.default, null));
 }
-},{"react":"node_modules/react/index.js","./Header":"Header.js","./Responsive":"Responsive.js","./Progress":"Progress.js","./OrganiseCss":"OrganiseCss.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Header":"Header.js","./Responsive":"Responsive.js","./Progress":"Progress.js","./OrganiseCss":"OrganiseCss.js","./Hobbies":"Hobbies.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29936,10 +30051,12 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _App = _interopRequireDefault(require("./App"));
 
+var _Context = require("./Context");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_Context.ContextProvider, null, /*#__PURE__*/_react.default.createElement(_App.default, null)), document.getElementById('root'));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"App.js","./Context":"Context.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29967,7 +30084,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64004" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58330" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
